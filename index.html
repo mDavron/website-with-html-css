@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website with html-css-js</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <a href="#" class="logo">Good<span>Foods</span></a>
+        <ul>
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <img
+          style="width: 50px"
+          src="./images/icons/menu.png"
+          alt="menu.png"
+          class="menuIcon"
+        />
+      </header>
+      <div class="content">
+        <div class="bannerText" id="bannerText">
+          <div class="active">
+            <h2>EAT Healthy<br />Stay Healthy</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+              perspiciatis tempora magnam quasi.At perspiciatis tempora magnam
+              quasi. iusto asperiores nam repellat!
+            </p>
+            <a href="#">Read More</a>
+          </div>
+          <div>
+            <h2>EAT Your<br />Veggies</h2>
+            <p>
+              At perspiciatis tempora magnam quasi. iusto asperiores nam
+              repellat! Voluptas accusantium deserunt Lorem ipsum dolor sit amet
+              Voluptas accusantium deserunt!
+            </p>
+            <a href="#">Read More</a>
+          </div>
+          <div>
+            <h2>Good Food<br />Good Mood</h2>
+            <p>
+              At perspiciatis tempora magnam quasi. Voluptas accusantium
+              deserunt iusto asperiores nam repellat, animi quaerat autem
+              facilis quos! Lorem ipsum dolor sit amet consectetur adipisicing
+              elit.
+            </p>
+            <a href="#">Read More</a>
+          </div>
+        </div>
+
+        <div class="bannerImg" id="bannerImg">
+          <img
+            src="./images/pexels-markus-winkler-2862154.jpg"
+            alt="markus"
+            class="active"
+          />
+          <img src="./images/pexels-bulbfish-1143754.jpg" alt="markus" />
+          <img src="./images/pexels-pixabay-434258.jpg" alt="markus" />
+        </div>
+      </div>
+
+      <div class="icons">
+        <ul class="sci">
+          <li>
+            <a href="#"><img src="./images/icons/facebook.png" alt="" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="./images/icons/twitter.png" alt="" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="./images/icons/instagram.png" alt="" /></a>
+          </li>
+        </ul>
+        <ul class="controls">
+          <li>
+            <a href="#"
+              ><img
+                src="images/icons/angle-square-left.png"
+                alt="img"
+                onclick="showTextSliderNext();showImgSliderNext()"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img
+                src="images/icons/angle-square-right.png"
+                alt="img"
+                onclick="showTextSliderPrev();showImgSliderPrev()"
+            /></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var bannerText = document.getElementById("bannerText");
+      var bannerTextChild = bannerText.getElementsByTagName("div");
+      var index = 0;
+
+      function showTextSliderPrev() {
+        bannerTextChild[index].classList.remove("active");
+        index = (index + 1) % bannerTextChild.length;
+        bannerTextChild[index].classList.add("active");
+      }
+
+      function showTextSliderNext() {
+        bannerTextChild[index].classList.remove("active");
+        index = (index - 1 + bannerTextChild.length) % bannerTextChild.length;
+        bannerTextChild[index].classList.add("active");
+      }
+
+      var bannerImg = document.getElementById("bannerImg");
+      var bannerImgChild = bannerImg.getElementsByTagName("img");
+      var i = 0;
+
+      function showImgSliderPrev() {
+        bannerImgChild[i].classList.remove("active");
+        i = (i + 1) % bannerImgChild.length;
+        bannerImgChild[i].classList.add("active");
+      }
+
+      function showImgSliderNext() {
+        bannerImgChild[i].classList.remove("active");
+        i = (i - 1 + bannerImgChild.length) % bannerImgChild.length;
+        bannerImgChild[i].classList.add("active");
+      }
+    </script>
+  </body>
+</html>
