@@ -221,7 +221,8 @@ header ul li a.active::before {
   .container {
     padding: 10px 20px;
   }
-  .container::after,.container::before {
+  .container::after,
+  .container::before {
     display: none;
   }
   header {
@@ -255,7 +256,7 @@ header ul li a.active::before {
   .menuIcon {
     display: initial;
     position: fixed;
-    right: 50px;
+    right: 22px;
     cursor: pointer;
     padding: 8px;
     z-index: 10000;
@@ -263,7 +264,6 @@ header ul li a.active::before {
     height: 3rem;
     background: #fff;
   }
-
 
   .content {
     margin-top: 0;
@@ -284,8 +284,18 @@ header ul li a.active::before {
     font-size: 1.5rem;
     line-height: 2rem;
   }
-  .content .bannerText  p{
+  .content .bannerText p {
     font-size: 16px;
-    line-height: 1rem;
+    line-height: 1.5rem;
+  }
+  .icons {
+    padding: 20px 0;
+  }
+  .icons .controls {
+    top: -87px;
+  }
+
+  .icons .controls li {
+    filter: invert(0);
   }
 }
